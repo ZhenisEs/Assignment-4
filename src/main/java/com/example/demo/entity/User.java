@@ -22,7 +22,9 @@ public class User {
     @Column(name = "Surname")
     private String Surname;
     @Column(name = "Artistname")
-    private String Artistname;
+    private String Login;
+    @Column(name = "Password")
+    private String Password;
 
 
 
