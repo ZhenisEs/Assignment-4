@@ -11,7 +11,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-public class User {
+public class UserEntity {
 
     @Column(name = "id")
     @Id
@@ -25,7 +25,10 @@ public class User {
     private String Login;
     @Column(name = "Password")
     private String Password;
-
+    @Column (name = "Balance")
+    private String Balance;
+    @Column (name = "Email")
+    private String Email;
 
 
 }
