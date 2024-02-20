@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+
 import com.example.demo.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,19 +14,12 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/upload")
-public class UploadControllers {
+@RequestMapping("/image")
+public class ImageUploadController {
+
     @Autowired
     private StorageService service;
-
-    @PostMapping("/uploadSong")
-    public ResponseEntity<?> uploadSong(@RequestParam("song") MultipartFile file) throws IOException {
-        String uploadSong = service.uploadSong(file);
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(uploadSong);
-    }
-
-    @PostMapping("/uploadImage")
+    @PostMapping
     public ResponseEntity<?> uploadImage(@RequestParam("image") MultipartFile file) throws IOException {
         String uploadImage = service.uploadImage(file);
         return ResponseEntity.status(HttpStatus.OK)
