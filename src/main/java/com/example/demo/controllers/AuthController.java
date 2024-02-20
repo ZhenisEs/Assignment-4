@@ -48,7 +48,7 @@ public class AuthController {
     public String registration(@Valid @ModelAttribute("user") UserDto userDto,
                                BindingResult result,
                                Model model){
-        User existingUser = userService.findUserByEmail(userDto.getEmail());
+        UserEntity existingUser = userService.findUserByEmail(userDto.getEmail());
 
         if(existingUser != null && existingUser.getEmail() != null && !existingUser.getEmail().isEmpty()){
             result.rejectValue("email", null,
@@ -70,8 +70,5 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
-    @GetMapping("/login")
-    public String login(){
-        return "login";
-    }
+
 }
