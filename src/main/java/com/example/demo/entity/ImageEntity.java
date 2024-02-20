@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "Image")
+@Table(name = "ImageEntity")
 @Data
 @AllArgsConstructor
 @Setter
