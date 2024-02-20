@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Service
 public class StorageService {
@@ -19,7 +20,7 @@ public class StorageService {
     @Autowired
     private ImageRepository imageRepository;
 
-    public String uploadSong(MultipartFile file) throws IOException {
+    public String uploadSong(MultipartFile file) throws IOException { //НЕ РАБОЧИЙ КОД
         try {
             SongEntity songEntity = SongEntity.builder()
                     .filename(file.getOriginalFilename())
@@ -36,7 +37,7 @@ public class StorageService {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            return "Failed to upload file: " + file.getOriginalFilename() + " due to IOException";
+            return "Failed to upload file: " + file.getOriginalFilename();
         }
     }
 
@@ -57,9 +58,12 @@ public class StorageService {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            return "Failed to upload file: " + file.getOriginalFilename() + " due to IOException";
+            return "Failed to upload file: " + file.getOriginalFilename();
         }
     }
+    public byte[] downloadImage(String fileName) {
+        Optional<ImageEntity> DBImageData = imageRepository.findByFilename(fileName);
+            return DBImageData.get().getImagedata();}
 }
 
 
