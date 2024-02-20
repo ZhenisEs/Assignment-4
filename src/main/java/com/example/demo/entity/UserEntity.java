@@ -1,7 +1,11 @@
 package com.example.demo.entity;
 
+import com.example.demo.entity.registration.Role;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "UserEntity")
@@ -12,6 +16,7 @@ import lombok.*;
 @Getter
 @Setter
 public class UserEntity {
+    private static final long serialVersionUID = 1L;
 
     @Column(name = "id")
     @Id
@@ -30,5 +35,11 @@ public class UserEntity {
     @Column (name = "email")
     private String email;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @JoinTable(
+            name="users_roles",
+            joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
+            inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
+    private List<Role> roles = new ArrayList<>();
 
 }
