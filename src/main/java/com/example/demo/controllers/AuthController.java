@@ -4,9 +4,6 @@ import com.example.demo.entity.registration.services.UserService;
 import com.example.demo.entity.UserEntity;
 
 import jakarta.validation.Valid;
-import net.javaguides.springboot.dto.UserDto;
-import net.javaguides.springboot.entity.User;
-import net.javaguides.springboot.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -67,11 +64,14 @@ public class AuthController {
         return "redirect:/register?success";
     }
 
-    // handler method to handle list of users
     @GetMapping("/users")
     public String users(Model model){
         List<UserDto> users = userService.findAllUsers();
         model.addAttribute("users", users);
         return "users";
+    }
+    @GetMapping("/login")
+    public String login(){
+        return "login";
     }
 }
