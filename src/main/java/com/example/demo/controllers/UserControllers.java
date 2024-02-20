@@ -50,4 +50,9 @@ public class UserControllers {
     public List<UserEntity> getAllByArtistname(@PathVariable("user_artistname") String artistname){
         return service.getByArtistname(artistname);
     }
+
+    @GetMapping("/email/{user_email}")
+    public List<UserEntity> getAllByEmail(@PathVariable("user_email") String email){
+        return service.getByArtistname(email);
+    }
 }
