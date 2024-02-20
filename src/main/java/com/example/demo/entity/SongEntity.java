@@ -17,9 +17,9 @@ public class SongEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "filename")
+    @Column(name = "sofilename")
     private String filename;
-    @Column(name = "filetype")
+    @Column(name = "sofiletype")
     private String filetype;
     @Column(name = "songdata")
     private byte[] songdata;

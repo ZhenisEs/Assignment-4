@@ -17,9 +17,9 @@ public class ImageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "fileename")
+    @Column(name = "imfilename")
     private String filename;
-    @Column(name = "fileetype")
+    @Column(name = "imfiletype")
     private String filetype;
     @Column(name = "imagedata")
     private byte[] imagedata;
