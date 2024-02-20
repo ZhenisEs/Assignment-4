@@ -17,18 +17,18 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "Firstname")
+    @Column(name = "firstname")
     private String firstname;
-    @Column(name = "Surname")
-    private String Surname;
-    @Column(name = "Artistname")
-    private String Login;
-    @Column(name = "Password")
-    private String Password;
-    @Column (name = "Balance")
-    private String Balance;
-    @Column (name = "Email")
-    private String Email;
+    @Column(name = "surname")
+    private String surname;
+    @Column(name = "artistname")
+    private String artistname;
+    @Column(name = "password")
+    private String password;
+    @Column (name = "balance")
+    private String balance;
+    @Column (name = "email")
+    private String email;
 
 
 }

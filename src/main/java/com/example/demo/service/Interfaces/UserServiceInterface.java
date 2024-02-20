@@ -9,4 +9,8 @@ public interface UserServiceInterface {
     UserEntity getById(int id);
     UserEntity create(UserEntity userEntity);
     List<UserEntity> getBySurname(String surname);
+
+    List<UserEntity> getByArtistname(String artistname);
+
+    List<UserEntity> getByEmail(String email);
 }

@@ -22,9 +22,9 @@ public class StorageService {
     public String uploadSong(MultipartFile file) throws IOException {
         try {
             SongEntity songEntity = SongEntity.builder()
-                    .Filename(file.getOriginalFilename())
-                    .FileType(file.getContentType())
-                    .SongData(file.getBytes())
+                    .filename(file.getOriginalFilename())
+                    .filetype(file.getContentType())
+                    .songdata(file.getBytes())
                     .build();
 
             SongEntity savedEntity = songRepository.save(songEntity);
@@ -43,9 +43,9 @@ public class StorageService {
     public String uploadImage(MultipartFile file) throws IOException {
         try {
             ImageEntity imageEntity = ImageEntity.builder()
-                    .Filename(file.getOriginalFilename())
-                    .FileType(file.getContentType())
-                    .ImageData(file.getBytes())
+                    .filename(file.getOriginalFilename())
+                    .filetype(file.getContentType())
+                    .imagedata(file.getBytes())
                     .build();
 
             ImageEntity savedEntity = imageRepository.save(imageEntity);

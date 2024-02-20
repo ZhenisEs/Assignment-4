@@ -17,10 +17,10 @@ public class ImageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "imagename")
-    private String Filename;
+    @Column(name = "fileename")
+    private String filename;
     @Column(name = "fileetype")
-    private String FileType;
+    private String filetype;
     @Column(name = "imagedata")
-    private byte[] ImageData;
+    private byte[] imagedata;
 }

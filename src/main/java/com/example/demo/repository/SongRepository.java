@@ -5,6 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface SongRepository extends JpaRepository<SongEntity, Integer> {
-
-    Optional<SongEntity> findByName(String fileName);
+    Optional<SongEntity> findByFilename(String filename);
 }

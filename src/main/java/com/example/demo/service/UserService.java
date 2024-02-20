@@ -35,4 +35,14 @@ public class UserService implements UserServiceInterface {
     public List<UserEntity> getBySurname(String surname) {
         return repo.findBySurname(surname);
     }
+    @Override
+    public List<UserEntity> getByArtistname(String artistname) {
+        return repo.findBySurname(artistname);
+    }
+    @Override
+    public List<UserEntity> getByEmail(String email) {
+        return repo.findBySurname(email);
+    }
 }
+
+

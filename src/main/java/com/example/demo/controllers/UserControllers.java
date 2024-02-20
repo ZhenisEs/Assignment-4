@@ -46,4 +46,8 @@ public class UserControllers {
         return service.getBySurname(surname);
     }
 
+    @GetMapping("/artistname/{user_artistname}")
+    public List<UserEntity> getAllByArtistname(@PathVariable("user_artistname") String artistname){
+        return service.getByArtistname(artistname);
+    }
 }
