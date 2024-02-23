@@ -3,13 +3,11 @@ import com.example.demo.entity.registration.services.UserDto;
 import com.example.demo.entity.registration.services.UserService;
 import com.example.demo.entity.UserEntity;
 
-import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -45,7 +43,7 @@ public class AuthController {
 
     // handler method to handle user registration form submit request
     @PostMapping("/register/save")
-    public String registration(@Valid @ModelAttribute("user") UserDto userDto,
+    public String registration(@Validated @ModelAttribute("user") UserDto userDto,
                                BindingResult result,
                                Model model){
         UserEntity existingUser = userService.findUserByEmail(userDto.getEmail());

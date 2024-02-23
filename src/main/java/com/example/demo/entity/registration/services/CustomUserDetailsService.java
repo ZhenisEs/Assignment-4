@@ -1,6 +1,7 @@
 package com.example.demo.entity.registration.services;
 
 import com.example.demo.entity.UserEntity;
+import com.example.demo.entity.registration.Role;
 import com.example.demo.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 public class CustomUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepository;
+    private Role role;
 
     public CustomUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
